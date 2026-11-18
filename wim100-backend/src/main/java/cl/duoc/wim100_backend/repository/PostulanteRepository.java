@@ -8,8 +8,8 @@ import java.util.List;
 public interface PostulanteRepository extends JpaRepository<Postulante,Long> {
     List<Postulante> findAllByOrderByFechaRegistroDesc();
 
-    boolean existByCorreoIgnoreCase(String correo);
+    boolean existsByCorreoIgnoreCase(String correo);
 
-    boolean existByCorreoIgnoreℂaseAndIdNot(String correo, Long id);
+    boolean existsByCorreoIgnoreCaseAndIdNot(String correo, Long id);
 
 }

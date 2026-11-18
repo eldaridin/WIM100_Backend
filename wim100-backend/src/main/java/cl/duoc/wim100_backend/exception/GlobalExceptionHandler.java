@@ -23,6 +23,11 @@ public class GlobalExceptionHandler {
         return respuesta(HttpStatus.CONFLICT, e.getMessage(), Map.of());
     }
 
+    @ExceptionHandler(UsuarioDuplicadoException.class)
+    public ResponseEntity<ErrorResponse> usuarioDuplicado(UsuarioDuplicadoException e) {
+        return respuesta(HttpStatus.CONFLICT, e.getMessage(), Map.of());
+    }
+
     @ExceptionHandler(CredencialesInvalidasException.class)
     public ResponseEntity<ErrorResponse> credenciales(CredencialesInvalidasException e) {
         return respuesta(HttpStatus.UNAUTHORIZED, e.getMessage(), Map.of());
